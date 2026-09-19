@@ -1,0 +1,33 @@
+# Папки сборки
+build/
+build-*/
+build-msvc/
+build-win/
+out/
+Debug/
+Release/
+
+# Visual Studio и CMake
+.vs/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Скомпилированные файлы
+*.exe
+*.obj
+*.o
+*.dll
+*.lib
+*.pdb
+
+# Локальные данные приложения
+*.dat
+
+# Системные файлы
+.DS_Store
+Thumbs.db
