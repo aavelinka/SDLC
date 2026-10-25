@@ -528,11 +528,19 @@
 
 ### Приложение А. Графическая часть
 
-Макет основных экранов приложения подготовлен для версии 0.1:
+Для версии 0.1 подготовлены две структурные диаграммы экранов приложения в нотации SysMLv2:
 
-![Макет интерфейса Task Manager](приложения/task-manager-ui-mockup.png)
+#### TaskManager_Dashboard
 
-Исходное описание макета: [`приложения/task-manager-ui-mockup.dot`](приложения/task-manager-ui-mockup.dot).
+![Структурная диаграмма главного экрана Task Manager](приложения/TaskManager_Dashboard.png)
+
+Исходное описание: [`приложения/task-manager-dashboard.dot`](приложения/task-manager-dashboard.dot).
+
+#### TaskManager_TaskPage
+
+![Структурная диаграмма экрана задачи Task Manager](приложения/TaskManager_TaskPage.png)
+
+Исходное описание: [`приложения/task-manager-task-page.dot`](приложения/task-manager-task-page.dot).
 
 ### Приложение Б. SysMLv2-модель
 

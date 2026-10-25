@@ -1,0 +1,84 @@
+digraph TaskManagerTaskPage {
+    graph [bgcolor="white", fontname="Arial", label="TaskManager_TaskPage", labelloc=t, labeljust=l, fontsize=24, rankdir=TB, ranksep=0.72, nodesep=0.55, pad=0.30, splines=ortho];
+    node [shape=plain, fontname="Arial"];
+    edge [color="#111111", penwidth=1.25, arrowsize=0.70];
+
+    taskPage [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" COLOR="#111111">
+        <TR><TD BGCOLOR="#FFFFFF" COLSPAN="2"><FONT POINT-SIZE="9">«part def»</FONT><BR/><FONT POINT-SIZE="20"><B>TaskPage</B></FONT></TD></TR>
+        <TR><TD BGCOLOR="#FFFFFF" COLSPAN="2"><FONT POINT-SIZE="10">attributes</FONT><BR/><B>title</B> = &quot;Подготовить отчёт&quot;</TD></TR>
+      </TABLE>
+    >];
+
+    headerPart [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part»</FONT><BR/><FONT POINT-SIZE="15"><B>header: TaskHeader</B></FONT></TD></TR>
+      </TABLE>
+    >];
+    infoPart [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part»</FONT><BR/><FONT POINT-SIZE="15"><B>taskInfo: TaskInfo</B></FONT></TD></TR>
+      </TABLE>
+    >];
+    subtaskPart [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part»</FONT><BR/><FONT POINT-SIZE="15"><B>subtasks: SubtaskList</B></FONT></TD></TR>
+      </TABLE>
+    >];
+    recurrencePart [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part»</FONT><BR/><FONT POINT-SIZE="15"><B>recurrence: RecurrenceSettings</B></FONT></TD></TR>
+      </TABLE>
+    >];
+    actionsPart [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part»</FONT><BR/><FONT POINT-SIZE="15"><B>actions: Actions</B></FONT></TD></TR>
+      </TABLE>
+    >];
+
+    headerDef [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part def»</FONT><BR/><FONT POINT-SIZE="16"><B>TaskHeader</B></FONT></TD></TR>
+        <TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">attributes</FONT><BR/>title = &quot;Название задачи&quot;<BR/>status = &quot;Не выполнена / Выполнена&quot;</TD></TR>
+      </TABLE>
+    >];
+    infoDef [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part def»</FONT><BR/><FONT POINT-SIZE="16"><B>TaskInfo</B></FONT></TD></TR>
+        <TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">attributes</FONT><BR/>description = &quot;Описание задачи&quot;<BR/>priority = &quot;Высокий&quot;<BR/>deadline = &quot;25.10.2026 18:00&quot;<BR/>category = &quot;Учёба&quot;</TD></TR>
+      </TABLE>
+    >];
+    subtaskDef [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part def»</FONT><BR/><FONT POINT-SIZE="16"><B>SubtaskList</B></FONT></TD></TR>
+        <TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">attributes</FONT><BR/>items = &quot;Собрать данные; Оформить выводы&quot;<BR/>progress = &quot;1 из 2 · 50%&quot;<BR/>action = &quot;Добавить подзадачу&quot;</TD></TR>
+      </TABLE>
+    >];
+    recurrenceDef [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part def»</FONT><BR/><FONT POINT-SIZE="16"><B>RecurrenceSettings</B></FONT></TD></TR>
+        <TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">attributes</FONT><BR/>rule = &quot;Каждую неделю&quot;<BR/>next = &quot;01.11.2026&quot;<BR/>enabled = &quot;true / false&quot;</TD></TR>
+      </TABLE>
+    >];
+    actionsDef [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#111111">
+        <TR><TD><FONT POINT-SIZE="9">«part def»</FONT><BR/><FONT POINT-SIZE="16"><B>Actions</B></FONT></TD></TR>
+        <TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">attributes</FONT><BR/>edit = &quot;Редактировать&quot;<BR/>complete = &quot;Завершить&quot;<BR/>delete = &quot;Удалить&quot;</TD></TR>
+      </TABLE>
+    >];
+
+    taskPage -> headerPart [arrowhead=diamond];
+    taskPage -> infoPart [arrowhead=diamond];
+    taskPage -> subtaskPart [arrowhead=diamond];
+    taskPage -> recurrencePart [arrowhead=diamond];
+    taskPage -> actionsPart [arrowhead=diamond];
+
+    headerPart -> headerDef;
+    infoPart -> infoDef;
+    subtaskPart -> subtaskDef;
+    recurrencePart -> recurrenceDef;
+    actionsPart -> actionsDef;
+
+    {rank=same; headerPart; infoPart; subtaskPart; recurrencePart; actionsPart}
+    {rank=same; headerDef; infoDef; subtaskDef; recurrenceDef; actionsDef}
+}

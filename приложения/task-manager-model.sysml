@@ -1,11 +1,18 @@
 package TaskManagerRequirements {
 
     part def TaskManagerApplication;
-    part def User;
-    part def Task;
-    part def Category;
-    part def Subtask;
-    part def RecurrenceRule;
+    part def DashboardPage;
+    part def TaskPage;
+    part def Header;
+    part def FilterPanel;
+    part def TaskList;
+    part def CategoryPanel;
+    part def QuickAddTask;
+    part def TaskHeader;
+    part def TaskInfo;
+    part def SubtaskList;
+    part def RecurrenceSettings;
+    part def Actions;
 
     requirement def CreateTask {
         doc /* Пользователь может создать задачу с названием и атрибутами. */
@@ -32,11 +39,8 @@ package TaskManagerRequirements {
     }
 
     part taskManager : TaskManagerApplication {
-        part users : User [0..*];
-        part tasks : Task [0..*];
-        part categories : Category [0..*];
-        part subtasks : Subtask [0..*];
-        part recurrenceRules : RecurrenceRule [0..*];
+        part dashboard : DashboardPage;
+        part taskDetails : TaskPage;
 
         satisfy CreateTask;
         satisfy PrioritizeTask;
@@ -44,5 +48,21 @@ package TaskManagerRequirements {
         satisfy OrganizeByCategory;
         satisfy DecomposeTask;
         satisfy RepeatTask;
+    }
+
+    part dashboard : DashboardPage {
+        part header : Header;
+        part filterPanel : FilterPanel;
+        part taskList : TaskList;
+        part categoryPanel : CategoryPanel;
+        part quickAdd : QuickAddTask;
+    }
+
+    part taskDetails : TaskPage {
+        part header : TaskHeader;
+        part taskInfo : TaskInfo;
+        part subtasks : SubtaskList;
+        part recurrence : RecurrenceSettings;
+        part actions : Actions;
     }
 }
