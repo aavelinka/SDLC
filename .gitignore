@@ -1,6 +1,8 @@
+
 build/
 build-*/
 build-msvc/
+build-win/
 out/
 Debug/
 Release/
@@ -9,6 +11,7 @@ Release/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
+
 *.sln
 *.vcxproj
 *.vcxproj.filters
