@@ -1,11 +1,11 @@
-digraph TaskFlowMockup {
-    graph [bgcolor="white", fontname="Arial", label="TaskFlow — макет основных экранов", labelloc=t, fontsize=22, ranksep=0.55, nodesep=0.35, pad=0.25];
+digraph TaskManagerMockup {
+    graph [bgcolor="white", fontname="Arial", label="Task Manager — макет основных экранов", labelloc=t, fontsize=22, ranksep=0.55, nodesep=0.35, pad=0.25];
     node [shape=plain, fontname="Arial"];
     edge [style=invis];
 
     dashboard [label=<
       <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="8" COLOR="#CBD5E1">
-        <TR><TD BGCOLOR="#2563EB" ALIGN="LEFT"><FONT COLOR="white" POINT-SIZE="18"><B>TaskFlow</B></FONT></TD><TD BGCOLOR="#2563EB"><FONT COLOR="white">Мои задачи</FONT></TD><TD BGCOLOR="#2563EB"><FONT COLOR="white">Профиль</FONT></TD></TR>
+        <TR><TD BGCOLOR="#2563EB" ALIGN="LEFT"><FONT COLOR="white" POINT-SIZE="18"><B>Task Manager</B></FONT></TD><TD BGCOLOR="#2563EB"><FONT COLOR="white">Мои задачи</FONT></TD><TD BGCOLOR="#2563EB"><FONT COLOR="white">Профиль</FONT></TD></TR>
         <TR><TD COLSPAN="3" ALIGN="LEFT"><FONT POINT-SIZE="16"><B>Список дел</B></FONT>  <FONT COLOR="#2563EB">+ Новая задача</FONT></TD></TR>
         <TR><TD COLSPAN="3" ALIGN="LEFT" BGCOLOR="#F8FAFC">Поиск… &nbsp; | &nbsp; Все статусы &nbsp; | &nbsp; Все категории &nbsp; | &nbsp; Приоритет</TD></TR>
         <TR><TD ALIGN="LEFT"><FONT COLOR="#DC2626">●</FONT> Подготовить отчёт<BR/><FONT POINT-SIZE="10">Высокий · Сегодня · Учёба</FONT></TD><TD>▢</TD><TD ALIGN="RIGHT">›</TD></TR>

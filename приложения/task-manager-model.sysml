@@ -1,6 +1,6 @@
-package TaskFlowRequirements {
+package TaskManagerRequirements {
 
-    part def TaskFlowApplication;
+    part def TaskManagerApplication;
     part def User;
     part def Task;
     part def Category;
@@ -31,7 +31,7 @@ package TaskFlowRequirements {
         doc /* Для задачи задаётся ежедневное, еженедельное или ежемесячное повторение. */
     }
 
-    part taskFlow : TaskFlowApplication {
+    part taskManager : TaskManagerApplication {
         part users : User [0..*];
         part tasks : Task [0..*];
         part categories : Category [0..*];
